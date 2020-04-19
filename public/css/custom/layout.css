@@ -1,0 +1,246 @@
+body {
+    font-size: 0.85rem
+}
+
+.form-control{
+    font-size: 0.85rem
+}
+
+.sidebar-nav>ul>li {
+    margin-bottom: 0px;
+}
+
+.container-fluid {
+    padding: 0 20px 20px 20px;
+}
+
+.page-titles {
+    margin-bottom: 20px;
+    padding-bottom:15px;
+}
+
+.card-actions a.btn-primary {
+    color: inherit;
+    opacity: 1;
+    color:#fff;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2ecc98;
+    border-color: #2ecc98;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.label-success {
+    background-color: #2ecc98;
+}
+
+.ribbon-success {
+    background: #2ecc98;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #479db7;
+    border-color: #479db7;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.label-info {
+    background-color: #479db7;
+}
+
+.sidebar-nav > ul > li.active > a, .sidebar-nav > ul > li.active:hover > a {
+    color: #ffffff;
+    background: #64acea !important
+}
+
+
+.sidebar-nav ul li a {
+    color: #555;
+}
+.sidebar-nav > ul > li > a i {
+    color: #777;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.card-select {
+    margin-bottom: 15px;
+}
+
+.card-select:hover {
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+.card-disable {
+    opacity: 0.5;
+}
+
+.card-container-overlay {
+  position: relative;
+  width: 50%;
+}
+
+.card-middle-overlay {
+    width: 300px;
+    z-index: 1;
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-16%, 218%);
+    text-align: center;
+}
+
+.card-container-overlay:hover .image {
+    opacity: 0.3;
+}
+
+.card-container-overlay:hover .middle {
+    opacity: 1;
+}
+
+/* Cards do dashboard*/
+.card-conectividade {
+    background: rgb(0, 152, 219);
+    border-color: rgb(0, 152, 219);
+}
+.card-conectividade.card-hover:hover {
+    background: rgb(20, 172, 239);
+}
+
+.card-datacenter {
+    background: rgb(87, 181, 40);
+    border-color: rgb(87, 181, 40);
+}
+
+.card-datacenter.card-hover:hover {
+    background: rgb(107, 201, 60);
+}
+
+.card-telefonia {
+    background: rgb(81, 181, 170);
+    border-color: rgb(81, 181, 170);
+}
+
+.card-telefonia.card-hover:hover {
+    background: rgb(101, 201, 190);
+}
+
+.card-webhosting {
+    background: rgb(27, 81, 119);
+    border-color: rgb(27, 81, 119);
+}
+
+.card-webhosting.card-hover:hover {
+    background: rgb(47, 101, 139);
+}
+
+.card-bandalarga {
+    background: rgb(119, 17, 112);
+    border-color: rgb(119, 17, 112);
+}
+
+.card-bandalarga.card-hover:hover {
+    background: rgb(139, 37, 132);
+}
+
+.card-manager {
+    background: rgb(250, 250, 250);
+    border-color: rgb(250, 250, 250);
+}
+.card-manager.card-hover:hover {
+    background: rgb(255, 255, 255);
+}
+
+.card-body {
+    padding: 1rem;
+    line-height: 1.3rem;
+}
+
+.card-body-spaced {
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+div.card.card-body .card-body-service {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+}
+
+div.card.card-body.table{
+    border-color: white;
+}
+
+.card-header-service {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+}
+
+.card-header-service.tool-title {
+    padding: 1.00rem 1.25rem;
+    min-height: 52px;
+}
+
+.card-header-service:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.tool-color1 {
+    background: #0cf;
+}
+
+.tool-color2 {
+    background: #06f;
+}
+
+.tool-color3 {
+    background: #96f;
+}
+
+.tool-color4 {
+    background: #c39;
+}
+
+.tool-color5 {
+    background: #e93;
+}
+
+.tool-color6 {
+    background: #4c0;
+}
+
+.tool-color7 {
+    background: #890;
+}
+
+.tool-color8 {
+    background: #093;
+}
+
+.tool-color9 {
+    background: #569;
+}
+
+
+.label-role {
+  position    : absolute;
+  top         : 3rem;
+  left        : .8rem;
+  padding     : 3px 8px;
+  text-align  : center;
+  font-size   : 11px;
+  font-style  : normal;
+  background-color: orange;
+  line-height : .9;
+  border-radius: 3px;
+}
