@@ -6,11 +6,11 @@
         <!-- ============================================================== -->
         <!-- Logo -->
         <!-- ============================================================== -->
-        <div class="navbar-header d-none d-sm-block">
-            <a class="navbar-brand" href="{{route('home')}}">
-                <img width="40" height="40" src="/img/logo_branco.png" class="light-logo" alt="homepage" />
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">
+                <img width="40" height="40" src="https://cineaddiction.com/wp-content/uploads/2018/12/300.jpg" class="light-logo" alt="homepage" />
                 <span style="">
-                    <img height="33" src="/img/nome_branco.png" class="light-logo" alt="homepage" />
+                    <img height="33" src="https://cineaddiction.com/wp-content/uploads/2018/12/300.jpg" class="light-logo" alt="homepage" />
                 </span>
             </a>
         </div>
@@ -24,7 +24,6 @@
             <ul class="navbar-nav mr-auto mt-md-0">
                 <!-- This is -->
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                 <!-- ============================================================== -->
                 <!-- Search -->
                 <!-- ============================================================== -->
@@ -35,28 +34,28 @@
                 <!-- ============================================================== -->
                 <!-- Messages -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown mega-dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="d-none d-sm-block">
-                            <b>{!! $current_customer->name !!}</b>
-                                @if($current_role)
-                                    <span class="label-role">{{ $current_role->label }}</span>
-                                @endif
-                            <i class="mdi mdi-chevron-down"></i>
-                        </i>
-                        <i class="d-block d-sm-none">
-                            <b>{!! substr($current_customer->name,0,15) !!}</b>
-                                @if($current_role)
-                                    <span class="label-role">{{ $current_role->label }}</span>
-                                @endif
-                            <i class="mdi mdi-chevron-down"></i>
-                        </i>
-                    </a>
+                <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-view-grid"></i></a>
                     <div class="dropdown-menu scale-up-left">
                         <ul class="mega-dropdown-menu row">
-                            <li class="col-12 m-b-120">
+                            <li class="col-12 col-md-6 m-b-120">
                                 <h4 class="m-b-20">Lista de clientes</h4>
-                                @include('customer.partials.select')
+                                {{-- @foreach($customer_list as $customer)
+                                    <div class="card">
+
+                                        <div class="card-body">
+                                            @if($current_customer_id == $customer->customer_id)
+                                                <div class="ribbon ribbon-info ribbon-right pull-right">Selecionado</div>
+                                            @endif
+
+                                            <h4 class="card-title">{!! $customer->name !!}
+                                                @if($current_customer_id <> $customer->customer_id)
+                                                    <a href="#" class="btn btn-sm btn-success pull-right">Selecionar</a>
+                                                @endif
+                                            </h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">{!! $customer->fantasy_name !!}</h6>
+                                        </div>
+                                    </div>
+                                @endforeach --}}
                             </li>
                         </ul>
                     </div>
@@ -70,72 +69,29 @@
             <!-- ============================================================== -->
             <ul class="navbar-nav">
                 <!-- ============================================================== -->
-                <!-- Comment -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- End Comment -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Messages -->
-                <!-- ============================================================== -->
-                @if(!$isInternalUserLogged)
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="notificationBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="javascript:updateDate({!! $notificationCount !!})"> <i class="mdi mdi-email"></i>
-                            @if($notificationCount > 0)
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                            @endif
-                        </a>
-                        <div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
-                            <ul>
-                                <li>
-                                    <div class="drop-title">Você  tem {!! $notificationCount !!} novas mensagens</div>
-                                </li>
-                                <li>
-                                    <div class="message-center">
-                                        @foreach($listContactNotification as $notification)
-                                            <!-- Message -->
-                                            <a href="{!! route('message.show',$notification->id,$notification->id) !!}">
-                                                <div class="user-img"> <span class="glyphicon glyph{!! $notification->icon_class !!}"></span></div>
-                                                <div class="mail-contnet">
-                                                    <h5>{!! replaceParams($notification->subject,$notification->params) !!}</h5> <span class="mail-desc">{!! $notification->description !!}/span> <span class="time">{!! format_date($notification->send_date) !!}</span> </div>
-                                            </a>
-                                        @endforeach
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="nav-link text-center" href="{{route('message.list')}}"> <strong>Ver todas as mensagens</strong> <i class="fa fa-angle-right"></i> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                @endif
-                <!-- ============================================================== -->
-                <!-- End Messages -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
                 <!-- Profile -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="round">{{substr($user_data->name,0,1)}}</span> <span class="profile-status online pull-right"></span>
+                        <span class="round">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right scale-up">
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
                                     <div class="u-img">
-                                        <span class="round">{{substr($user_data->name,0,1)}}</span> <span class="profile-status online pull-right"></span>
+                                        <span class="round">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
 
                                     </div>
                                     <div class="u-text">
-                                        <h4>{!! $user_data->name !!}</h4>
+                                        <h4>SPARTANOS</h4>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ route('myprofile') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
-                            <li><a href="{!! route('myprofile.invites.list') !!}"><i class="mdi mdi-email-outline"></i> Meus convites</a></li>
+                            <li><a href=""><i class="mdi mdi-account"></i> Meu perfil</a></li>
+                            <li><a href=""><i class="mdi mdi-email-outline"></i> Meus convites</a></li>
                             <li><a href="#"><i class="mdi mdi-history"></i> Meu histórico</a></li>
-                            <li><a href="{!! route('logout') !!}"><i class="mdi mdi-power"></i> Logout</a></li>
+                            <li><a href=""><i class="mdi mdi-power"></i> Logout</a></li>
                         </ul>
                     </div>
                 </li>
@@ -146,7 +102,3 @@
 <!-- ============================================================== -->
 <!-- End Topbar header -->
 <!-- ============================================================== -->
-@push('scripts')
-<script src="/js/custom/modules/notification/notification.js"></script>
-
-@endpush

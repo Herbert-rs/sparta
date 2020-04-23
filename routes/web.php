@@ -11,6 +11,18 @@
 |
 */
 
+// PENSAR EM ESTRUTURA DIVIDIDA PARA JOBS E ADMIN
+
+// Criar um grupo /user e outro /jobs. A partir desses grupos as rotas serão identificadas a partir de um view composer que vai direcionar cada um a seu layout especifico.
+
 Route::get('/', function () {
     return view('home');
+});
+
+Route::get('/jobs', function () {
+    return view('jobs.index');
+});
+
+Route::get('/user', function () {
+    return view('user.index');
 });
