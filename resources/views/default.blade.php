@@ -16,6 +16,8 @@
             @endif
         </div>
 
+        @include('accessibility.vlibras')
+
     @include('layouts.partials.js')
 
     </body>

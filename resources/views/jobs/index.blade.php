@@ -12,9 +12,9 @@
 
                     <h4 class="card-title" id="1">Exemplo de sub-titulo</h4>
                     <p class="text-justify">
-                        @for ($i = 0; $i < 5; $i++)
-                            AMIGO ONDIESTA <br>
-                            AMIGO ESTOAQUI <br> <br>
+                        @for ($i = 0; $i < 2; $i++)
+                            TESTE MENSAGEM 1 <br>
+                            TESTE MENSAGEM 2 <br> <br>
                         @endfor
                     </p>
                 </div>

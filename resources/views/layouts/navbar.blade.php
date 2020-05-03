@@ -38,7 +38,7 @@
                     <div class="dropdown-menu scale-up-left">
                         <ul class="mega-dropdown-menu row">
                             <li class="col-12 col-md-6 m-b-120">
-                                <h4 class="m-b-20">Lista de clientes</h4>
+                                <h4 class="m-b-20">Lista de candidaturas</h4>
                                 {{-- @foreach($customer_list as $customer)
                                     <div class="card">
 

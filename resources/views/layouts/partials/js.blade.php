@@ -14,6 +14,9 @@
 <!--Custom JavaScript -->
 <script src="/js/adminlte/custom.min.js"></script>
 
+{{-- Feramentas de acessibilidade --}}
+<script src="/js/vlibras/vlibras-plugin.js"></script>
+
 @toastr_js
 @toastr_render
 
@@ -27,4 +30,8 @@
             "pageLength": 20,
         });
     }
+
+    // Ferramentas de acessibilidade
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+
 </script>
