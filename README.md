@@ -6,7 +6,7 @@
 
 ## Instalação
 
-- Clone o projeto com o comando: git clone https://github.com/WenLopes/laravel-docker-base.git
+- Clone o projeto com o comando: git clone https://github.com/WenLopes/sparta.git
 - Use o arquivo .env.example e crie seu arquivo .env
 - Acesse o diretório do projeto e edite o arquivo docker-compose.yml no bloco de credenciais do MySql, de acordo com sua escolha (as mesmas credenciais devem ser usadas na sua aplicação posteriormente)
 - Acesse o diretório e execute o comando: docker-compose up

@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return 'HELLOW WORLD!! :)';
+    return view('home');
 });

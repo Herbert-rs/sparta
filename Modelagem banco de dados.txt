@@ -1,0 +1,88 @@
+
+https://desenvolvedores.catho.com.br/api-portal/apis
+
+// Quebrar essa tabela e pensar em como fazer autenticação
+users [
+	- user_id 			- PK
+	- name 				- string 30
+	- corporate 		- bool
+	- avatar			- string (caminho pra um diretório do laravel)
+	- description		- string
+	- tax_id (CPF/CNPJ) - string 30
+	- building_id		- string
+	- phone				- string 10
+	- mobile			- string 11
+	- email				- string 		|unique
+	- birthdate 		- datetime 		|null
+	- password 			- string
+	- token (validador) - string 50
+	- cid 				- string		|null
+	- curriculum		- string		|null
+	- active			- bool
+	- timestamps		- timestamp
+]
+
+contact_company [
+	- contact_company_id 	- PK
+	- name					- string 30
+	- email					- string		|unique
+	- phone					- string 10
+	- timestamps			- timestamp
+]
+
+vacancies [
+	- vacancy_id		- PK
+	- user_id (empresa) - FK
+	- description		- string
+	- building_id		- FK			|null
+	- hiring_id			- FK			|mais de uma opção
+	- salary			- float			|null
+	- profession_id		- FK
+	- active			- bool
+	- timestamps		- timestamp
+]
+
+building(localização) [
+	- building_id
+	- mail_code (CEP) 			- string
+	- type(rodovia, etc..)		- 
+	- name 						- 
+	- number (nº)				-	
+	- state						-
+	- city						-		
+	- full_address				-
+	- district (bairro)			-
+]
+
+hiring (tipo de contratação) [
+	- hiring_id
+	- description ( efetivo/clt, PJ, outros, temporário, estágio, autônomo, cooperado, trainee )
+]
+
+//Pensar em como não repetir vagas.
+professions [
+	- profession_id
+	- level(
+		- Auxiliar/Operacional
+		- Pleno
+		- Júnior/Trainee
+		- Sênior
+		- Técnico
+		- Supervisão/Coordenação
+		- Estágio
+		- Gerência
+		- Diretoria
+	)
+	- name ( programador Java )
+	- description (pro cara falar o que a vaga faz.)
+]
+
+//Não tem como estruturar por enquanto. Depende dos recursos mapeados da aplicação.
+preferences [
+]
+
+skills [
+	- skill_id
+	- user_id
+	- description
+]
