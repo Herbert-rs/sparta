@@ -1,0 +1,43 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+services:
+
+    mysql:
+      image: mysql:5.7
+      container_name: mysql
+      working_dir: /var/lib/mysql
+      networks:
+        static-network:
+          ipv4_address: 172.20.130.10
+      volumes:
+        - ./phpdocker/mysql:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=ZsQ2vU6tm0
+        - MYSQL_DATABASE=sparta
+        - MYSQL_USER=system
+        - MYSQL_PASSWORD=3dA5TF9I
+      ports:
+        - "3306:3306"
+
+    app:
+      image: ambientum/php:7.2-nginx
+      container_name: web
+      working_dir: /var/www/app
+      networks:
+        static-network:
+          ipv4_address: 172.20.130.4
+      volumes:
+          - .:/var/www/app
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+        - "800:8080"
+      links:
+        - mysql
