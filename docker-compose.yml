@@ -8,6 +8,11 @@ networks:
       config:
         - subnet: 172.20.0.0/16
 
+volumes:
+  # MySQL Data
+  sparta_mysql_data:
+    driver: local
+
 services:
 
     mysql:
@@ -18,7 +23,7 @@ services:
         static-network:
           ipv4_address: 172.20.130.10
       volumes:
-        - ./phpdocker/mysql:/var/lib/mysql
+        - sparta_mysql_data:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=ZsQ2vU6tm0
         - MYSQL_DATABASE=sparta
