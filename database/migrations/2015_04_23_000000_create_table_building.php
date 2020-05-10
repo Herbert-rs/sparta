@@ -22,7 +22,7 @@ class CreateTableBuilding extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('full_address');
-            $table->string('district');
+            $table->string('district')->nullable();
         });
     }
 

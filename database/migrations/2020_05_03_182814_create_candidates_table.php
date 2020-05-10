@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersDataTable extends Migration
+class CreateCandidatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateUsersDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_data', function (Blueprint $table) {
-            $table->bigIncrements('user_data_id');
+        Schema::create('candidates', function (Blueprint $table) {
+            $table->bigIncrements('candidate_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->string('name',30);
             $table->string('avatar');
+            $table->string('goal'); //Descrição do perfil da empresa
             $table->longText('description'); //Descrição do perfil da empresa
             $table->string('email')->unique();
             $table->string('tax_id',30); //CPF/CNPJ
@@ -41,6 +42,6 @@ class CreateUsersDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_data');
+        Schema::dropIfExists('candidates');
     }
 }

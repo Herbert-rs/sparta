@@ -15,13 +15,15 @@ class CreateTableVacancies extends Migration
     public function up()
     {
         Schema::create('vacancies', function (Blueprint $table) {
-            $table->bigIncrements('vacancies_id');
+            $table->bigIncrements('vacancy_id');
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('company_id')->on('companys');
+            $table->foreign('company_id')->references('company_id')->on('companies');
 
             $table->unsignedBigInteger('building_id');
             $table->foreign('building_id')->references('building_id')->on('building');
             
+            $table->boolean('building_remote');
+
             $table->unsignedBigInteger('hiring_type_id');
             $table->foreign('hiring_type_id')->references('hiring_type_id')->on('hiring_type');
             
@@ -31,7 +33,7 @@ class CreateTableVacancies extends Migration
             $table->string('description')->unique();
             $table->float('salary')->nullable();
             $table->boolean('active');
-            $table->timestamp('timestamp')->useCurrent();
+            $table->timestamps();
         });
     }
 
