@@ -18,7 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->bigIncrements('company_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
-            $table->string('name',30);
+            $table->string('name');
             $table->string('avatar');
             $table->longText('description'); //Descrição do perfil da empresa
             $table->string('email')->unique();

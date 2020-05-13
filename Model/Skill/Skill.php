@@ -20,7 +20,12 @@ class Skill extends Model
      */
     protected $primaryKey = 'skill_id';
 
-
+    /**
+     * Check if this table will use timestamps
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /** Relations */
     public function candidate()

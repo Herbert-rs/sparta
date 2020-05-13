@@ -11,7 +11,7 @@ class BuildingTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\Model\Building\Building::class, 1)->create()->each(function ($building) {
+        factory(\Model\Building\Building::class, 50)->create()->each(function ($building) {
             $building->save();
         });
     }

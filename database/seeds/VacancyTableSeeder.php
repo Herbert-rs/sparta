@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class VacancyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class, 30)->create()->each(function ($user) {
-            $user->save();
+        factory(\Model\Vacancy\Vacancy::class, 100)->create()->each(function ($vacancy) {
+            $vacancy->save();
         });
     }
 }

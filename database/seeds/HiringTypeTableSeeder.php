@@ -14,7 +14,6 @@ class HiringTypeTableSeeder extends Seeder
     {
         HiringType::create(['description' => 'CLT']);
         HiringType::create(['description' => 'PJ']);
-        HiringType::create(['description' => 'Estágio']);
         HiringType::create(['description' => 'Trainee']);
         HiringType::create(['description' => 'Temporário']);
 
