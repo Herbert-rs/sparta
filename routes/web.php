@@ -19,3 +19,6 @@ Route::get('/jobs', function () {
     return view('jobs');
 });
 
+Route::get('/user', function () {
+    return view('user.index');
+});
