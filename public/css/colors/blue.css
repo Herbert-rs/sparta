@@ -36,7 +36,7 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-  background: #1e88e5;
+  background: #4e12af;
 }
 
 .topbar .navbar-header {
@@ -64,11 +64,11 @@ File: scss
 /*General Elements
 *******************/
 a.link:hover, a.link:focus {
-  color: #1e88e5 !important;
+  color: #4e12af !important;
 }
 
 .bg-theme {
-  background-color: #1e88e5 !important;
+  background-color: #4e12af !important;
 }
 
 .pagination > .active > a,
@@ -77,31 +77,31 @@ a.link:hover, a.link:focus {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #1e88e5;
-  border-color: #1e88e5;
+  background-color: #4e12af;
+  border-color: #4e12af;
 }
 
 .right-sidebar .rpanel-title {
-  background: #1e88e5;
+  background: #4e12af;
 }
 
 .stylish-table tbody tr:hover, .stylish-table tbody tr.active {
-  border-left: 4px solid #1e88e5;
+  border-left: 4px solid #4e12af;
 }
 
 .text-themecolor {
-  color: #1e88e5 !important;
+  color: #4e12af !important;
 }
 
 .profile-tab li a.nav-link.active,
 .customtab li a.nav-link.active {
-  border-bottom: 2px solid #1e88e5;
-  color: #1e88e5;
+  border-bottom: 2px solid #4e12af;
+  color: #4e12af;
 }
 
 .profile-tab li a.nav-link:hover,
 .customtab li a.nav-link:hover {
-  color: #1e88e5;
+  color: #4e12af;
 }
 
 /*******************
@@ -109,16 +109,16 @@ a.link:hover, a.link:focus {
 *******************/
 .btn-themecolor,
 .btn-themecolor.disabled {
-  background: #1e88e5;
+  background: #4e12af;
   color: #ffffff;
-  border: 1px solid #1e88e5;
+  border: 1px solid #4e12af;
 }
 
 .btn-themecolor:hover,
 .btn-themecolor.disabled:hover {
-  background: #1e88e5;
+  background: #4e12af;
   opacity: 0.7;
-  border: 1px solid #1e88e5;
+  border: 1px solid #4e12af;
 }
 
 .btn-themecolor.active, .btn-themecolor:focus,
@@ -161,7 +161,7 @@ a.link:hover, a.link:focus {
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
   background: #ffffff;
-  color: #1e88e5;
+  color: #4e12af;
 }
 
 .sidebar-nav > ul > li.active > a, .sidebar-nav > ul > li.active:hover > a {

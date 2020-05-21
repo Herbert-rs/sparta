@@ -18,6 +18,7 @@ class CreateTableProfessions extends Migration
             $table->string('level');
             $table->string('name');
             $table->string('description');
+            $table->timestamp('timestamp')->useCurrent();
         });
     }
 
