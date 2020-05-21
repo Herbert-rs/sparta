@@ -14,24 +14,20 @@
 <!--Custom JavaScript -->
 <script src="/js/adminlte/custom.min.js"></script>
 
-{{-- Feramentas de acessibilidade --}}
+{{-- ## Feramentas de acessibilidade --}}
+
+{{-- VLibras --}}
 <script src="/js/vlibras/vlibras-plugin.js"></script>
+<script src="/js/vlibras/launcher.js"></script>
+
+{{-- Mouse Trap --}}
+<script src="/js/mousetrap/mousetrap.min.js"></script>
+<script src="/js/mousetrap/mousetrap-shortcuts.js"></script>
+
+{{-- Contrast --}}
+<script src="/js/contrast/contrast.js"></script>
 
 @toastr_js
 @toastr_render
 
 @stack ('scripts')
-
-<script type="application/javascript">
-
-    if($.fn.dataTable) {
-        $.extend(true, $.fn.dataTable.defaults, {
-            "lengthChange": false,
-            "pageLength": 20,
-        });
-    }
-
-    // Ferramentas de acessibilidade
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-
-</script>

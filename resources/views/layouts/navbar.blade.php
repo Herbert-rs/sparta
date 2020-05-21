@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Topbar header - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<header class="topbar">
+<header class="topbar contrast" data-contrast-dark='{"background": "black", "font": "white"}' data-contrast-light='{"background": "white", "font": "black"}'>
     <nav class="navbar top-navbar navbar-expand-md navbar-light">
         <!-- ============================================================== -->
         <!-- Logo -->
@@ -72,8 +72,8 @@
                 <!-- Profile -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="round">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="round contrast-font">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right scale-up">
                         <ul class="dropdown-user">

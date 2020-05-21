@@ -7,7 +7,7 @@
 
                 <li>
                     <a class="waves-effect waves-dark"
-                       href="https://www.google.com.br"
+                       href="/user"
                        aria-expanded="false">
                        <i class="mdi mdi-home-outline"></i>
                        <span class="hide-menu">Item de menu 1</span>
@@ -16,7 +16,7 @@
 
                 <li>
                     <a class="waves-effect waves-dark"
-                       href="https://www.google.com.br"
+                       href="/jobs"
                        aria-expanded="false">
                        <i class="mdi mdi-home-outline"></i>
                        <span class="hide-menu">Item de menu 1</span>
@@ -25,7 +25,7 @@
 
                 <li>
                     <a class="waves-effect waves-dark"
-                       href="https://www.google.com.br"
+                       href="/test"
                        aria-expanded="false">
                        <i class="mdi mdi-home-outline"></i>
                        <span class="hide-menu">Item de menu 1</span>

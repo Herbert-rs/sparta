@@ -15,6 +15,6 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link href="/css/telium/layout.css" rel="stylesheet">
+<link href="/css/custom/layout.css" rel="stylesheet">
 
 @toastr_css
