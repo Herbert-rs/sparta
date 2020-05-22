@@ -1,0 +1,168 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.header-list-itens {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#icon {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+
+.header-list {
+    padding-right: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+.section-input{
+    color: white;
+    font-size: 30px;
+    background-color: black;
+    height: 30rem   ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section-input-title {
+    padding: 0 19.5rem 8px 0    ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-section-input {
+    display: flex;
+}
+
+.button-section-input {
+    background-color: #363636;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif   ;
+    padding: 14px 40px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.section-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.section-form-filtros {
+    width: 30%;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.title-contrato {
+    text-align: left;
+    padding: 12px 0;
+}
+
+.title-filtro{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.section-form-list-filtro {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button-list {
+    width: 30%;
+    color: white;
+    background-color: #363636;
+    padding: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.container-input {
+    width: 100%;
+    margin-top: 38px;
+}
+
+.button-list-input {
+    width: 30%;
+    color: white;
+    background-color: #363636;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.container-input-form {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.search {
+    width: 70%;
+}
+
+.section-form-ibm {
+    width: 30%;
+}
+
+.section-form-tellium {
+    width:  30%;
+}
+
+.section-form-title {
+    background-color: black;
+    color: white;
+    padding: 25px 40px;
+}
+
+.section-form-content {
+    padding: 15px 40px 15px;
+}
+
+.section-form-subtitle {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 0 10px;
+}
+
+.section-form-list {
+    padding: 15px 40px 15px;
+
+}
+
+.form-list {
+    padding: 15px;
+    border-top: solid 1px  gray;
+    font-weight: 600;
+}
+
+.footer {
+    display: flex;
+}
+
+.footer-list {
+    display: flex;
+    cursor: pointer;
+    padding-left: 112px;
+}
+
+.logo-footer {
+    margin: 0 auto;
+}
