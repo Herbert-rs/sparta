@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    return view('jobs.index');
+    return view('jobs');
 });
 
 Route::get('/user', function () {
