@@ -11,3 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
  }, false);
+
+ document.querySelector('#shortcut-index').addEventListener('click', function(e){
+    window.location.replace("/");
+ });
+
+ document.querySelector('#shortcut-job').addEventListener('click', function(e){
+    window.location.replace("/jobs");
+ });

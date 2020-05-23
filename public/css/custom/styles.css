@@ -67,9 +67,9 @@
 }
 
 .section-form-filtros {
-    width: 30%;
     text-align: center;
-    padding: 0 4rem;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
 }
 
 .title-contrato {
@@ -118,12 +118,8 @@
     width: 70%;
 }
 
-.section-form-ibm {
-    width: 30%;
-}
+.section-form-vacancy {
 
-.section-form-tellium {
-    width:  30%;
 }
 
 .section-form-title {
@@ -165,4 +161,46 @@
 
 .logo-footer {
     margin: 0 auto;
+}
+
+.section-button-header{
+    color: #ffffff;
+    background-color: indigo;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.section-accessibility-options {
+    justify-content: center;
+    display: flex;
+}
+
+.header-list-itens-accessibility {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-list-accessibility {
+    padding-right: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+#contrast-dot-white{
+    height: 35px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid;
+    display: inline-block;
+}
+
+#contrast-dot-black{
+    height: 35px;
+    width: 35px;
+    background-color: #000;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: inline-block;
 }

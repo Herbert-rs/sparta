@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/jobs', function () {
-    return view('jobs');
-});
+Route::get('/jobs', ['uses' => 'VacancyController@list'])->name('vancancy.list');
 
 Route::get('/user', function () {
     return view('user.index');
