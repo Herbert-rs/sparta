@@ -30,7 +30,7 @@ class Vacancy extends Model
 
     public function building()
     {
-        return $this->hasOne('Model\Building\Building', 'building_id', 'building');
+        return $this->hasOne('Model\Building\Building', 'building_id', 'building_id');
     }
 
     public function hiring_type()

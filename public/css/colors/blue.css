@@ -36,11 +36,7 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-  background: #4e12af;
-}
-
-.topbar .navbar-header {
-  background: rgba(0, 0, 0, 0.05);
+  background: #2a2a2a;
 }
 
 .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {

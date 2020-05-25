@@ -7,13 +7,28 @@
         </div>
 
         <div id="main-wrapper">
-            {{-- Painel de usuário --}}
-            @if(1==1)
-                @include('user.default')
-            {{-- Busca de vagas --}}
-            @else
-                @include('jobs.default')
-            @endif
+
+            <div class="page-wrapper" style="background-image:url();">
+    
+                @include('layouts.navbar')
+                <style type="text/css">
+                    .page-wrapper{
+                        margin-left: 0px;
+                    }
+            
+                    @media (min-width: 768px){
+                        .footer {
+                            left: 0px;
+                        }
+                    }
+            
+                </style>
+            
+                @yield('content-fluid')
+            
+            </div>
+            
+
         </div>
 
         @include('accessibility.vlibras')
@@ -22,4 +37,4 @@
 
     </body>
 
-</html>
+@include('layouts.footer')

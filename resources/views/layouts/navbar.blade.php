@@ -1,104 +1,121 @@
-<!-- ============================================================== -->
-<!-- Topbar header - style you can find in pages.scss -->
-<!-- ============================================================== -->
-<header class="topbar contrast" data-contrast-dark='{"background": "black", "font": "white"}' data-contrast-light='{"background": "white", "font": "black"}'>
+<header class="topbar contrast" data-contrast-dark='{"background": "#2a2a2a", "font": "white"}' data-contrast-light='{"background": "#39104e", "font": "#2a2a2a"}'>
     <nav class="navbar top-navbar navbar-expand-md navbar-light">
-        <!-- ============================================================== -->
-        <!-- Logo -->
-        <!-- ============================================================== -->
+
         <div class="navbar-header">
-            <a class="navbar-brand" href="">
-                <img width="40" height="40" src="https://cineaddiction.com/wp-content/uploads/2018/12/300.jpg" class="light-logo" alt="homepage" />
-                <span style="">
-                    <img height="33" src="https://cineaddiction.com/wp-content/uploads/2018/12/300.jpg" class="light-logo" alt="homepage" />
+            {{-- <a class="navbar-brand" href=""> --}}
+                {{-- <img width="40" height="40" src="{!! asset('img/logo-acme.png') !!}" class="light-logo" alt="homepage" /> --}}
+                <span style="navbar-brand">
+                   <img width="55%" alt="" src="{!! asset('img/logo_branco.png') !!}"/>
                 </span>
-            </a>
+            {{-- </a> --}}
         </div>
-        <!-- ============================================================== -->
-        <!-- End Logo -->
-        <!-- ============================================================== -->
+
         <div class="navbar-collapse">
-            <!-- ============================================================== -->
-            <!-- toggle and nav items -->
-            <!-- ============================================================== -->
-            <ul class="navbar-nav mr-auto mt-md-0">
-                <!-- This is -->
-                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                <!-- ============================================================== -->
-                <!-- Search -->
-                <!-- ============================================================== -->
-                <!--<li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                    <form class="app-search">
-                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                </li>-->
-                <!-- ============================================================== -->
-                <!-- Messages -->
-                <!-- ============================================================== -->
-                <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-view-grid"></i></a>
-                    <div class="dropdown-menu scale-up-left">
-                        <ul class="mega-dropdown-menu row">
-                            <li class="col-12 col-md-6 m-b-120">
-                                <h4 class="m-b-20">Lista de candidaturas</h4>
-                                {{-- @foreach($customer_list as $customer)
-                                    <div class="card">
 
-                                        <div class="card-body">
-                                            @if($current_customer_id == $customer->customer_id)
-                                                <div class="ribbon ribbon-info ribbon-right pull-right">Selecionado</div>
-                                            @endif
+            <ul class="navbar-nav mr-auto mt-md-0 accessibility-buttons">
 
-                                            <h4 class="card-title">{!! $customer->name !!}
-                                                @if($current_customer_id <> $customer->customer_id)
-                                                    <a href="#" class="btn btn-sm btn-success pull-right">Selecionar</a>
-                                                @endif
-                                            </h4>
-                                            <h6 class="card-subtitle mb-2 text-muted">{!! $customer->fantasy_name !!}</h6>
-                                        </div>
-                                    </div>
-                                @endforeach --}}
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- ============================================================== -->
-                <!-- End Messages -->
-                <!-- ============================================================== -->
+                <div class="section-accessibility-options">
+                    <ul class="header-list-itens">
+                        <li class="header-list-accessibility">
+                            <a type="button" id="shortcut-index" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'> 
+                                [Usuário ALT+U]
+                            </a>
+                        </li>
+        
+                        <li class="header-list-accessibility">
+                            <a type="button" id="vlibras-button" href="#"> 
+                                <img alt="Clique nesta imagem para abrir o componente VLibras" width="40px" src="https://vlibras.gov.br/app/assets/component-ac.png">
+                            </a>
+                        </li>
+        
+                        <li class="header-list-accessibility">
+                            <a type="button" id="shortcuts-btn" href="#"> 
+                                <img alt="Clique nesta imagem para exibir um modal com a lista de atalhos da aplicação" width="40px" src="https://www.flaticon.com/premium-icon/icons/svg/668/668286.svg">
+                            </a>
+                        </li>
+        
+                        <li class="header-list-accessibility">
+                            <button aria-label="Clique neste ícone para alterar a aplicação para o modo CLARO" type="button" id="contrast-dot-white" href="#"> </button>
+                        </li>
+        
+                        <li class="header-list-accessibility">
+                            <button aria-label="Clique neste ícone para alterar a aplicação para o modo ESCURO" type="button" id="contrast-dot-black" href="#"> </button>
+                        </li>
+        
+                        <li class="header-list-accessibility">
+                            <a type="button" id="shortcut-job" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'> 
+                                [Vagas ALT+J]
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </ul>
-            <!-- ============================================================== -->
-            <!-- User profile and search -->
-            <!-- ============================================================== -->
+
             <ul class="navbar-nav">
-                <!-- ============================================================== -->
-                <!-- Profile -->
-                <!-- ============================================================== -->
+                
+                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href=""><i class="fa fa-briefcase" aria-hidden="true"></i> Vagas </a> </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="round contrast-font">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
+                        <span class="round contrast-font">{{substr('Wendel',0,1)}}</span> <span class="profile-status online pull-right"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right scale-up">
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
                                     <div class="u-img">
-                                        <span class="round">{{substr('SPARTANOS',0,1)}}</span> <span class="profile-status online pull-right"></span>
+                                        <span class="round">{{substr('Wendel',0,1)}}</span> <span class="profile-status online pull-right"></span>
 
                                     </div>
                                     <div class="u-text">
-                                        <h4>SPARTANOS</h4>
+                                        <h4>Wendel</h4>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li><a href=""><i class="mdi mdi-account"></i> Meu perfil</a></li>
-                            <li><a href=""><i class="mdi mdi-email-outline"></i> Meus convites</a></li>
-                            <li><a href="#"><i class="mdi mdi-history"></i> Meu histórico</a></li>
+                            <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
                             <li><a href=""><i class="mdi mdi-power"></i> Logout</a></li>
                         </ul>
                     </div>
                 </li>
+            
             </ul>
         </div>
     </nav>
 </header>
-<!-- ============================================================== -->
-<!-- End Topbar header -->
-<!-- ============================================================== -->
+
+<div id="shortcuts-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modal-colored-header bg-primary">
+                <h4 style="color: white;" class="modal-title" id="danger-header-modalLabel">LISTA DE ATALHOS: <strong> <span id="contact_requested_email"></span> </strong> </h4>
+                <button aria-label="Fechar modal" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <h3 class="mt-0">Para navegar de forma mais prática, você pode usar os atalhos</h5>
+
+                <div style="padding: 1.5%">
+                    <h6>- ALT + J : Redireciona para a página de busca de vagas</h6>
+                    <h6>- ALT + U : Redireciona para a página de adminitração do perfil (Em desenvolvimento)</h6>
+                </div>
+                        
+            </div>
+            <div class="modal-footer">
+                <button aria-label="Fechar modal" style="color: white; background-color: rgb(42, 42, 42);" type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+    
+    <script>
+        $('#shortcuts-btn').on('click', function(e) {
+            
+            $('#shortcuts-modal').modal('show');
+
+        });
+    </script>
+
+@endpush

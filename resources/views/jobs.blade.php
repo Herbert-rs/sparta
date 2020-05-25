@@ -70,9 +70,9 @@
         <div class="col-md-12">
             <section class="section-form">
                 <div class="col-md-3">
-                    <div class="section-form-filtros contrast" data-contrast-dark='{"background": "black", "font": "#f5f5f5"}' data-contrast-light='{"background": "#f5f5f5", "font": "black"}'>
+                    <div class="section-form-filtros">
                         <div class="container-contrato contrast" data-contrast-dark='{"background": "black", "font": "#f5f5f5"}' data-contrast-light='{"background": "#f5f5f5", "font": "black"}'>
-                            <h3 class="title-filtro">Filtros</h3>
+                            <h3 class="title-filtro contrast" data-contrast-dark='{"font": "white"}' data-contrast-light='{"font": "red"}'>Filtros</h3>
                             <h3 class="title-contrato">Tipo de Contrato</h3>
                             <ul class="section-form-list-filtro">
                                 <a class="button-list" href="#">CLT</a>

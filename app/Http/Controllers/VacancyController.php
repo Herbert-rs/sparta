@@ -17,7 +17,7 @@ class VacancyController extends Controller
     public function list()
     {
         $vacancies = $this->vacancyRepository->list();
-        return view('jobs', ['vacancies' => $vacancies]);
+        return view('vacancy.list', ['vacancies' => $vacancies]);
     }
 
 }

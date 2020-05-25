@@ -43,3 +43,9 @@ function setContrastLightMode(){
     });
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    setContrastLightMode();
+
+});

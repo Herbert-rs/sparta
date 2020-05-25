@@ -13,6 +13,6 @@ class VacancyRepository {
 
     public function list()
     {
-        return $this->model->with(['company','hiring_type','profession'])->paginate(5);
+        return $this->model->with(['company','hiring_type','profession','building'])->where('active', 1)->paginate(5);
     }
 }

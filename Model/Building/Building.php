@@ -27,4 +27,9 @@ class Building extends Model
      */
     public $timestamps = false;
 
+
+    public function vacancy()
+    {
+        return $this->belongsToMany('Model\Vacancy\Vacancy', 'building_id', 'building_id');
+    }    
 }

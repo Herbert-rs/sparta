@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Go to: Jobs page
     Mousetrap.bind('alt+j', function(e) {
-        window.location.replace("/jobs");
+        window.location.replace("/vacancies");
     });
 
  }, false);
@@ -17,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function() {
  });
 
  document.querySelector('#shortcut-job').addEventListener('click', function(e){
-    window.location.replace("/jobs");
+    window.location.replace("/vacancies");
  });

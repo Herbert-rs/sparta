@@ -8,9 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="{!! asset('img/rocket.ico') !!}"  />
     <title>Painel de Controle</title>
     @include('layouts.partials.css')
     <script src="{!! asset('js/jquery/jquery.min.js') !!}"></script>
 </head>
-
