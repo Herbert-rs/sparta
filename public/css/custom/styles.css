@@ -242,6 +242,16 @@
     margin-left: 14rem;
 }
 
+@media (max-width: 1155px){
+    .accessibility-buttons{
+        margin-left: 2rem !important;
+    }
+    .navbar-header{
+        display: none;
+    }    
+}
+
+
 .success-message{
     color: green;
     font-weight: 600;

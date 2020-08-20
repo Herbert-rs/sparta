@@ -1,6 +1,3 @@
-
-https://desenvolvedores.catho.com.br/api-portal/apis
-
 // Quebrar essa tabela e pensar em como fazer autenticação
 users [
 	- user_id 			- PK

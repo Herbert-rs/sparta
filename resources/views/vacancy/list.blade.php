@@ -1,11 +1,6 @@
 @extends('default')
 @section('content-fluid')
 
-    @push('styles')
-        <link rel="stylesheet" href="{!! asset('css/custom/styles.css') !!}" />
-        <link rel="stylesheet" type="text/css" href="{!! asset('css/custom/reset.css') !!}" />
-    @endpush
-
     <section class="section-input contrast" data-contrast-dark='{"background": "#39104e", "font": "white"}' data-contrast-light='{"background": "#2a2a2a", "font": "#2a2a2a"}'>
         <form action=" " method="post"  >
             <label for="vacancy_search" class="section-input-title contrast" data-contrast-dark='{"font": "#f5f5f5"}' data-contrast-light='{"font": "#f5f5f5"}'> <i class="fa fa-search" aria-hidden="true"></i> Buscar Vagas</label>

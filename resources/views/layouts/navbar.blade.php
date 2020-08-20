@@ -54,7 +54,7 @@
 
             <ul class="navbar-nav">
                 
-                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href=""><i class="fa fa-briefcase" aria-hidden="true"></i> Vagas </a> </li>
+                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Vagas </a> </li>
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

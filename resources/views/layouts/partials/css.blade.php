@@ -15,6 +15,8 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link href="/css/custom/layout.css" rel="stylesheet">
+<link rel="stylesheet" href="{!! asset('css/custom/layout.css') !!}" type="text/css">
+<link rel="stylesheet" href="{!! asset('css/custom/styles.css') !!}" type="text/css"/>
+<link rel="stylesheet" href="{!! asset('css/custom/reset.css')  !!}" type="text/css"/>
 
 @toastr_css

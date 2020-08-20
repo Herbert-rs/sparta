@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
  }, false);
 
  document.querySelector('#shortcut-index').addEventListener('click', function(e){
-    window.location.replace("/");
+    window.location.replace("/user");
  });
 
  document.querySelector('#shortcut-job').addEventListener('click', function(e){

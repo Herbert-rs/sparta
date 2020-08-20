@@ -1,18 +1,42 @@
-@include('layouts.navbar')
-@include('layouts.sidebar')
+@include('layouts.header')
+    <body class="fix-header fix-sidebar card-no-border">
 
-<div class="page-wrapper" style="background-image:url();">
-    <div class="container-fluid">
-		<div class="row page-titles d-none d-sm-block" name="top">
-		    <div class="col-md-12 col-8 align-self-center">
-		        {{-- {{ Breadcrumbs::render() }} --}}
-		    </div>
-		</div>
+        <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+        </div>
 
-		@include('layouts.partials.messages')
+        <div id="main-wrapper">
 
-		@yield('content-fluid')
+            <div class="page-wrapper" style="background-image:url();">
+    
+                @include('layouts.navbar')
+                @include('layouts.sidebar')
 
-		@include('layouts.footer')
-	</div>
-</div>
+                <style type="text/css">
+                    .page-wrapper{
+                        margin-left: 0px;
+                    }
+            
+                    @media (min-width: 768px){
+                        .footer {
+                            left: 0px;
+                        }
+                    }
+            
+                </style>                
+                
+                @yield('content-fluid')
+            
+            </div>
+            
+
+        </div>
+
+        @include('accessibility.vlibras')
+
+    @include('layouts.partials.js')
+
+    </body>
+
+@include('layouts.footer')
