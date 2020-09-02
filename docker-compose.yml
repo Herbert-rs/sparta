@@ -44,3 +44,14 @@ services:
         - "800:8080"
       links:
         - mysql
+
+    nodejs:
+      build: phpdocker/nodejs
+      container_name: nodejs
+      working_dir: /code
+      volumes:
+        - /srv/code:/code
+      networks:
+        static-network:
+          ipv4_address: 172.20.130.9
+      tty: true

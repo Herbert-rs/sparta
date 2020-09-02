@@ -18,19 +18,19 @@ class CreateCandidatesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->string('name',30);
-            $table->string('avatar');
-            $table->string('goal'); //Descrição do perfil da empresa
-            $table->longText('description'); //Descrição do perfil da empresa
+            $table->string('avatar')->nullable();
+            $table->string('goal')->nullable(); //Descrição do perfil da empresa
+            $table->longText('description')->nullable(); //Descrição do perfil da empresa
             $table->string('email')->unique();
             $table->string('tax_id',30); //CPF/CNPJ
-            $table->unsignedBigInteger('building_id');
+            $table->unsignedBigInteger('building_id')->nullable();
             $table->foreign('building_id')->references('building_id')->on('building');
-            $table->string('phone',10);
+            $table->string('phone',10)->nullable();
             $table->string('mobile',11);
             $table->date('birthdate')->nullable();
             $table->string('cid')->nullable();
             $table->string('curriculum')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

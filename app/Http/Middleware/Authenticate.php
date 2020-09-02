@@ -15,7 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            toastr()->warning('Autentique ou crie uma conta para acessar a página','Autentique-se');
+            return route('index');
         }
     }
 }

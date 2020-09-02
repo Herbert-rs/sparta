@@ -19,16 +19,16 @@ class CreateCompaniesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->string('name');
-            $table->string('avatar');
-            $table->longText('description'); //Descrição do perfil da empresa
+            $table->string('avatar')->nullable();
+            $table->longText('description')->nullable(); //Descrição do perfil da empresa
             $table->string('email')->unique();
             $table->string('manager'); //Contato responsável da empresa
             $table->string('tax_id',30); //CPF/CNPJ
-            $table->unsignedBigInteger('building_id');
+            $table->unsignedBigInteger('building_id')->nullable();
             $table->foreign('building_id')->references('building_id')->on('building');
-            $table->string('phone',10);
-            $table->string('mobile',11);
-            $table->boolean('active');
+            $table->string('phone',10)->nullable();
+            $table->string('mobile',11)->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
 
         });

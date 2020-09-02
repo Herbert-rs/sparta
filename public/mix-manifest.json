@@ -1,8 +1,4 @@
 {
     "/js/jquery.min.js": "/js/jquery.min.js",
-    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
-    "/css/style.css": "/css/style.css",
-    "/css/blue.css": "/css/blue.css",
-    "/css/animate.css": "/css/animate.css",
-    "/css/spinners.css": "/css/spinners.css"
+    "/js/accessibility-package.js": "/js/accessibility-package.js"
 }

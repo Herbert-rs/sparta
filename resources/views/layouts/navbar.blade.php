@@ -73,9 +73,9 @@
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href=""><i class="mdi mdi-account"></i> Meu perfil</a></li>
+                            <li><a href="{{ route('user.index') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
                             <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
-                            <li><a href=""><i class="mdi mdi-power"></i> Logout</a></li>
+                            <li><a href="{{ route('logout') }}"><i class="mdi mdi-power"></i> Logout</a></li>
                         </ul>
                     </div>
                 </li>
