@@ -20,6 +20,16 @@ class Candidate extends Model
      */
     protected $primaryKey = 'candidate_id';
 
+    /**
+     * @var string[]
+     */
+    protected $guarded = [
+        'candidade_id'
+    ];
+
+    public static function find($id)
+    {
+    }
 
 
     /** Relations */
