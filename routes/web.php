@@ -18,9 +18,12 @@
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.signup');
+Route::post('/company/', ['uses' => 'CompanyController@save']);
 
 Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
 
 Route::get('/user', function () {
     return view('user.index');
 });
+
