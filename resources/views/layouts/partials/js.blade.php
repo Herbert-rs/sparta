@@ -30,4 +30,43 @@
 @toastr_js
 @toastr_render
 
+
+<script type="text/javascript" src="{{asset('js/accessibility-package.js')}}"></script>
+
+<script>
+    window.addEventListener('load', function() {
+        var labels = {
+            menuTitle: 'Acessibilidade',
+            increaseText: 'Aumentar tamanho do texto',
+            decreaseText: 'Diminuir tamanho do texto',
+            increaseTextSpacing: 'Aumentar espaçamento do texto',
+            decreaseTextSpacing: 'Diminuir espaçamento do texto',
+            invertColors: 'Inverter cores',
+            grayHues: 'Tons de cinza',
+            underlineLinks: 'Sublinhar links',
+            bigCursor: 'Cursor grande',
+            readingGuide: 'Guia de leitura',
+            textToSpeech: 'Texto > Fala',
+            speechToText: 'Fala > Texto'
+        };
+
+        var icon = {
+            position: {
+                // left: { size: 0.5, units: '%' },
+                top: { size: 50, units: '%' },
+                bottom: { size: 20, units: 'px' },
+                right: { size: 0.5, units: '%' },
+                type: 'fixed'
+            }
+        };
+
+        var options_access = { labels: labels, icon: icon };
+        options_access.textToSpeechLang = 'pt-BR'; // or any other language
+        options_access.speechToTextLang = 'pt-BR'; // or any other language
+        
+        new Accessibility(options_access); 
+    
+    }, false);
+</script>
+
 @stack ('scripts')
