@@ -162,6 +162,7 @@
     color: white !important;
     font-weight: 300 !important;
     background-color: #39104e !important;
+    position: relative;
 }
 
 .footer-list {
@@ -248,11 +249,46 @@
     }
     .navbar-header{
         display: none;
-    }    
+    }
 }
 
 
 .success-message{
     color: green;
     font-weight: 600;
+}
+
+form.singup-form{
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+img.img-profile{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+    border: solid 5px #fff;
+}
+
+.profile-block{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.profile-block p{
+    width: 80%;
+    text-align: justify;
+}
+
+.profile-block p.author{
+    text-align: right;
+
 }

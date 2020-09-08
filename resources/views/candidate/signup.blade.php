@@ -1,12 +1,12 @@
 @extends('default')
 @section('content-fluid')
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cadatro Empresa - Space Jobs</title>
+    <title>Cadatro Candidato - Space Jobs</title>
 </head>
 <body>
 <div class="container">
@@ -20,8 +20,8 @@
         </div>
         <div class="col-md-6">
 
-            <form class="singup-form" method="post" action="/company/sign_up">
-                <h3 class="singup-head"><i class="fa fa-lg fa-fw fa-user"></i>Cadastre-se Como Empresa</h3>
+            <form class="singup-form" method="post" action="/candidate/sign_up">
+                <h3 class="singup-head"><i class="fa fa-lg fa-fw fa-user"></i>Cadastre-se Como Candidato</h3>
 
                 @csrf
                 <div class="form-group">
@@ -33,16 +33,12 @@
                     <input type="file" name="avatar" >
                 </div>
                 <div class="form-group">
+                    <label class="control-label">Objetivo</label>
+                    <input type="text" class="form-control" name="goal">
+                </div>
+                <div class="form-group">
                     <label class="control-label">Descrição</label>
                     <input type="text" class="form-control" name="Description">
-                </div>
-                <div class="form-group">
-                    <label class="control-label">E-Mail</label>
-                    <input class="form-control" type="email" name="email" placeholder="E-mail" autofocus required autocomplete='off'>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Contato Responsável da Empresa</label>
-                    <input type="text" class="form-control" name="manager">
                 </div>
                 <div class="form-group">
                     <label class="control-label">CPF/CNPJ</label>
@@ -61,6 +57,24 @@
                 <div class="form-group">
                     <label class="control-label">Celular</label>
                     <input type="text" class="form-control cel-sp-mask" name="mobile" placeholder="(00) 00000-0000">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">E-Mail</label>
+                    <input class="form-control" type="email" name="email" placeholder="E-mail" autofocus required autocomplete='off'>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Data de Nascimento:</label>
+                    <input class="form-control" type="date" name="birthdate" placeholder="datanasc" autofocus required autocomplete='off'>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">CID</label>
+                    <label>
+                        <input type="text" class="form-control" name="cid">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="imagem">Curriculo:</label>
+                    <input type="file" name="curriculum" >
                 </div>
                 <div class="form-group btn-container">
                     <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>Cadastrar</button>

@@ -18,6 +18,13 @@
 Route::get('/', function () {
     return view('home');
 });
+//Routes For Sign up
+Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
+Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
+
+//Routes For Success
+//Route::get(/success_signup)
+
 Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.signup');
 Route::post('/company/', ['uses' => 'CompanyController@save']);
 
