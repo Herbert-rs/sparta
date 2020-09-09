@@ -17,10 +17,15 @@ Route::get('/', function(){ return view('index'); })->name('index');
 
 Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
 
+
+//Routes For Sign up
+Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
+Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', ['uses' => 'HomeController@index'])->name('home');
-    
+
     Route::get('/user', ['uses' => 'UserController@index'])->name('user.index');
 
 });

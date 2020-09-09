@@ -54,31 +54,36 @@
 
             <ul class="navbar-nav">
                 
-                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Vagas </a> </li>
+                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fa fa-search" aria-hidden="true"></i> Vagas </a> </li>
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="round contrast-font">{{substr('Wendel',0,1)}}</span> <span class="profile-status online pull-right"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right scale-up">
-                        <ul class="dropdown-user">
-                            <li>
-                                <div class="dw-user-box">
-                                    <div class="u-img">
-                                        <span class="round">{{substr('Wendel',0,1)}}</span> <span class="profile-status online pull-right"></span>
-
+                @if (!Auth::user())
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fa fa-user" aria-hidden="true"></i> Candidato </a> </li>
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Empresa </a> </li>                    
+                @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="round contrast-font">{{ strtoupper(substr(Auth::user()->email,0,1)) }}</span> <span class="profile-status online pull-right"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-text">
+                                            <h4>{!! Auth::user()->email !!}</h4>
+                                        </div>
                                     </div>
-                                    <div class="u-text">
-                                        <h4>Wendel</h4>
-                                </div>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="{{ route('user.index') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
-                            <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
-                            <li><a href="{{ route('logout') }}"><i class="mdi mdi-power"></i> Logout</a></li>
-                        </ul>
-                    </div>
-                </li>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('user.index') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
+                                <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <li><button type="submit"><i class="mdi mdi-power"></i> Logout</button></li>
+                                </form>
+                            </ul>
+                        </div>
+                    </li>
+                @endif
             
             </ul>
         </div>
