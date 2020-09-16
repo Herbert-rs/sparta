@@ -13,7 +13,9 @@
 
 Auth::routes();
 
-Route::get('/', function(){ return view('index'); })->name('index');
+Route::get('/', function () {
+    return view('index');
+})->name('index');
 
 Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
 
@@ -21,6 +23,9 @@ Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.l
 //Routes For Sign up
 Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
 Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
+
+Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.sign_up');
+Route::post('/company/', ['uses' => 'CompanyController@save']);
 
 Route::group(['middleware' => 'auth'], function () {
 
