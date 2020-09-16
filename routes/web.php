@@ -28,4 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/user', ['uses' => 'UserController@index'])->name('user.index');
 
+    require base_path('routes/sparta/vacancy.php');
+
 });
