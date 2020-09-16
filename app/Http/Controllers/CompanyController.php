@@ -25,7 +25,7 @@ class CompanyController extends Controller
         $data['active'] = 1;
         $this->companyRepo->save($data);
 
-//        return redirect()->route('company.signup');
+//        return redirect()->route('company.sig_nup');
         return view('layouts.success',['msg' =>  'CADASTRO COM SUCESSO']);
     }
 }
