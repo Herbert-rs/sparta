@@ -11,26 +11,26 @@
 |
 */
 
-// PENSAR EM ESTRUTURA DIVIDIDA PARA JOBS E ADMIN
-
-// Criar um grupo /user e outro /jobs. A partir desses grupos as rotas serão identificadas a partir de um view composer que vai direcionar cada um a seu layout especifico.
+Auth::routes();
 
 Route::get('/', function () {
-    return view('home');
-});
+    return view('index');
+})->name('index');
+
+Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
+
+
 //Routes For Sign up
 Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
 Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
 
-//Routes For Success
-//Route::get(/success_signup)
-
 Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.sign_up');
 Route::post('/company/', ['uses' => 'CompanyController@save']);
 
-Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/user', function () {
-    return view('user.index');
+    Route::get('/home', ['uses' => 'HomeController@index'])->name('home');
+
+    Route::get('/user', ['uses' => 'UserController@index'])->name('user.index');
+
 });
-
