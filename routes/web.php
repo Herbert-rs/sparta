@@ -25,7 +25,7 @@ Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
 //Routes For Success
 //Route::get(/success_signup)
 
-Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.signup');
+Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.sign_up');
 Route::post('/company/', ['uses' => 'CompanyController@save']);
 
 Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
