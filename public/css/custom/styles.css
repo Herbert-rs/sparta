@@ -292,3 +292,9 @@ img.img-profile{
     text-align: right;
 
 }
+
+.success-signup {
+    align-items: center;
+    text-align: justify;
+    display: flex;
+}
