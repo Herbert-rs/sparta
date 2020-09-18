@@ -24,8 +24,8 @@ Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.l
 Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
 Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
 
-Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.sign_up');
-Route::post('/company/', ['uses' => 'CompanyController@save']);
+Route::get('/company/sign_up', ['uses' => 'CompanyController@new'])->name('company.sign_up');
+Route::post('/company/sign_up', ['uses' => 'CompanyController@save']);
 
 Route::group(['middleware' => 'auth'], function () {
 

@@ -20,7 +20,7 @@ class Company extends Model
      */
     protected $primaryKey = 'company_id';
 
-
+    protected $guarded = ['company_id'];
     
     /** Relations */
     public function user()

@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\UserRepository;
+use Model\Company\CompanyRepository;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    private $companyRepo;
+    /**
+     * @var CompanyRepository
+     */
+    protected $companyRepo;
+
+    public  function  __construct(
+        CompanyRepository $companyRepo
+    )
+    {
+        $this->companyRepo = $companyRepo;
+    }
 
     public function index()
     {
@@ -18,14 +30,29 @@ class CompanyController extends Controller
         return view('company.signup');
     }
 
-    public function save(Request $request){
+    public function save(Request $request, UserRepository $userRepository)
+    {
+        try{
 
-        $data = $request->except('_token');
-        $data['user_id'] = 1;
-        $data['active'] = 1;
-        $this->companyRepo->save($data);
+            $data = $request->except('_token');
+            $user = $userRepository->save([
+                'email' => $data['email'],
+                'password' => $data['password'],
+                'corporate' => true
+            ]);
+    
+            $data['user_id'] = $user->user_id;
+            $data['active']  = true;
+            unset($data['password']);
 
-//        return redirect()->route('company.sig_nup');
-        return view('layouts.success',['msg' =>  'CADASTRO COM SUCESSO']);
+            $this->companyRepo->save($data);
+
+        } catch(\Exception $e){
+            throw new \Exception($e->getMessage());
+        }
+
+        toastr()->success('Seu cadastro foi criado com sucesso','Sucesso!');
+        return redirect()->route('company.sign_up');
+
     }
 }
