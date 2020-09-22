@@ -11,7 +11,10 @@ class CandidateRepository {
         $this->model = $model;
     }
 
-
+    public function getByUserId(int $user_id)
+    {
+        return $this->model->where('user_id', $user_id)->first();
+    }
 
     public function save($data)
     {

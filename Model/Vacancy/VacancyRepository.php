@@ -22,7 +22,7 @@ class VacancyRepository {
                 ->with(['company','hiring_type','profession','building'])
                 ->where('company_id', $company_id)
                 ->where('active', 1)
-                ->get();
+                ->paginate(3);
     }
 
     public function getByCandidateId(int $candidate_id)

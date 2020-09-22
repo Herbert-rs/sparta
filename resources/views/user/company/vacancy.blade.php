@@ -4,11 +4,10 @@
     @if (count($vacancies) > 0)
         
         @foreach ($vacancies as $vacancy)
-            
-            {{-- {{dd($vacancy)}} --}}
+
             <div class="row">
                 <div class="col-md-12">
-                    <a href=" {{ route('user.index') }} "> <h3 class="section-form-subtitle contrast"> <i class="fas fa-pencil-alt"></i> {{ $vacancy->profession->title }} </h3> </a>
+                    <a href=" {{ route('user.index') }} "> <h3 class="section-form-subtitle contrast"> <button class="btn btn-sm btn-outline-primary"><i class="fas fa-pencil-alt"></i></button> {{ $vacancy->profession->title }} </h3> </a>
                     <p class="section-form-paragraph contrast" data-contrast-dark='{"font": "white"}' data-contrast-light='{"font": "#2a2a2a"}'>
                         <strong>Atividades da vaga:</strong> {{ $vacancy->description }}
                     </p>
@@ -30,6 +29,11 @@
 
         @endforeach
 
+        <div class="row">
+            <div class="col-md-12">
+                {{ $vacancies->links() }}
+            </div>
+        </div>
     @else
         
         <p> Não existem vagas cadastradas</p>

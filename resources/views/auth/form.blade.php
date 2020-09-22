@@ -6,3 +6,9 @@
     <label class="control-label">Senha:</label>
     <input class="form-control" type="password" name="password" placeholder="Senha" autofocus required autocomplete='off'>
 </div>
+
+@if ( $errors->has('email') || $errors->has('password') )
+    <div class="alert alert-danger" role="alert">
+        Usuário ou senha inválidos
+    </div>
+@endif

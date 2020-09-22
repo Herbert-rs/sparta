@@ -33,4 +33,13 @@ class CandidatureRepository {
         $result = $candidature->save();
         return $result;
     }
+
+    public function getByCandidateId(int $candidate_id)
+    {
+        return $this->model
+                        ->with(['vacancy','vacancy.company','vacancy.hiring_type','vacancy.profession','vacancy.building'])
+                        // ->with(['vacancy.company:company_id,name,avatar'])
+                        ->where('candidate_id', $candidate_id)
+                        ->paginate(3);
+    }
 }

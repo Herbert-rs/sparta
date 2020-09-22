@@ -37,4 +37,9 @@ class Candidature extends Model
     {
         return $this->hasOne('Model\Vacancy\Vacancy', 'vacancy_id', 'vacancy_id');
     }
+
+    public function company()
+    {
+        return $this->hasOne('Model\Company\Company', 'company_id', 'company_id');
+    }
 }
