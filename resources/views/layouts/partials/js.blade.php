@@ -53,9 +53,9 @@
         var icon = {
             position: {
                 // left: { size: 0.5, units: '%' },
-                top: { size: 50, units: '%' },
+                top: { size: 80, units: '%' },
                 bottom: { size: 20, units: 'px' },
-                right: { size: 0.5, units: '%' },
+                left: { size: 0.5, units: '%' },
                 type: 'fixed'
             }
         };

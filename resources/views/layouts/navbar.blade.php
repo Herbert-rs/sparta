@@ -74,8 +74,9 @@
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('user.index') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
-                                <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
+                                <li><a href="{{ route('user.index') }}"><i class="fas fa-tachometer-alt"></i> Dashboard </a></li>
+                                <li><a href="{{ route('user.vacancy') }}"><i class="fas fa-briefcase"></i> Minhas vagas </a></li>
+                                <li><a href="{{ route('user.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a></li>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <li><button type="submit"><i class="mdi mdi-power"></i> Logout</button></li>

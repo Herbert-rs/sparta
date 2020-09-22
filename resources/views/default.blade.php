@@ -30,15 +30,15 @@
                             <div class="card">
                                 <div class="row justify-content-center">
                                     <div class="col-md-2">
-                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Dashboard </a>
+                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('user.index') }}"><i class="fas fa-tachometer-alt"></i> Dashboard </a>
                                     </div>
 
                                     <div class="col-md-2">
-                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Dashboard </a>
+                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('user.vacancy') }}"><i class="fas fa-briefcase"></i> Minhas Vagas</a>
                                     </div>
 
                                     <div class="col-md-2">
-                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Dashboard </a>
+                                        <a style="padding: 1rem; color: #505658;" class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="{{ route('user.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Meu Perfil </a>
                                     </div>
 
                                 </div>
