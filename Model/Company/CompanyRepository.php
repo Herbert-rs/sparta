@@ -1,12 +1,12 @@
-<?php namespace Model\Candidate;
+<?php namespace Model\Company;
 
-use Model\Candidate\Candidate;
+use Model\Company\Company;
 
-class CandidateRepository {
+class CompanyRepository {
 
     protected $model;
 
-    public function __construct(Candidate $model)
+    public function __construct(Company $model)
     {
         $this->model = $model;
     }
@@ -18,9 +18,9 @@ class CandidateRepository {
 
     public function save($data)
     {
-        $candidate = new Candidate();
-        $candidate->fill($data);
-        $result = $candidate->save();
+        $company = new Company();
+        $company->fill($data);
+        $result = $company->save();
 
         return $result;
     }

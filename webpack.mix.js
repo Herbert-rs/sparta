@@ -14,11 +14,17 @@ const mix = require('laravel-mix');
 var public_path_js = 'public/js/';
 var public_path_css = 'public/css/';
 
+var custom_path_js = 'public/js/custom/';
+
 mix.copy('resources/assets/js/plugins/jquery/jquery.min.js', public_path_js + 'jquery.min.js');
 
 mix.scripts([
     'node_modules/accessibility/dist/accessibility.min.js'
 ], public_path_js+'accessibility-package.js');
+
+mix.js([
+    'resources/js/vacancy/list.js'
+], custom_path_js+'vacancy/list.js')
 
 // mix.scripts([
 //     'resources/assets/js/plugins/popper/popper.min.js',

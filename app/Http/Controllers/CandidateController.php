@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\UserRepository;
 use Illuminate\Http\Request;
-use Model\Candidate\Candidate;
 use Model\Candidate\CandidateRepository;
 
 
@@ -32,14 +32,29 @@ class CandidateController extends Controller
         return view('candidate.signup');
     }
 
-    public function save(Request $request){
+    public function save(Request $request, UserRepository $userRepository){
+
+        try{
 
             $data = $request->except('_token');
-            $data['user_id'] = 1;
-            $data['active'] = 1;
+            $user = $userRepository->save([
+                'email' => $data['email'],
+                'password' => $data['password'],
+                'corporate' => false
+            ]);
+    
+            $data['user_id'] = $user->user_id;
+            $data['active']  = true;
+            unset($data['password']);
+
             $this->candidateRepo->save($data);
 
-//        return redirect()->route('candidate.sign_up');
-          return view('layouts.success',['msg' =>  'CADASTRO COM SUCESSO']);
+        } catch(\Exception $e){
+            throw new \Exception($e->getMessage());
+        }
+
+        toastr()->success('Seu cadastro foi criado com sucesso','Sucesso!');
+        return redirect()->route('candidate.sign_up');
+
     }
 }

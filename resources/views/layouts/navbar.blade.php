@@ -17,33 +17,33 @@
                 <div class="section-accessibility-options">
                     <ul class="header-list-itens">
                         <li class="header-list-accessibility">
-                            <a type="button" id="shortcut-index" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'> 
+                            <a type="button" id="shortcut-index" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'>
                                 [Usuário ALT+U]
                             </a>
                         </li>
-        
+
                         <li class="header-list-accessibility">
-                            <a type="button" id="vlibras-button" href="#"> 
+                            <a type="button" id="vlibras-button" href="#">
                                 <img alt="Clique nesta imagem para abrir o componente VLibras" width="40px" src="https://vlibras.gov.br/app/assets/component-ac.png">
                             </a>
                         </li>
-        
+
                         <li class="header-list-accessibility">
-                            <a type="button" id="shortcuts-btn" href="#"> 
+                            <a type="button" id="shortcuts-btn" href="#">
                                 <img alt="Clique nesta imagem para exibir um modal com a lista de atalhos da aplicação" width="40px" src="https://www.flaticon.com/premium-icon/icons/svg/668/668286.svg">
                             </a>
                         </li>
-        
+
                         <li class="header-list-accessibility">
                             <button aria-label="Clique neste ícone para alterar a aplicação para o modo CLARO" type="button" id="contrast-dot-white" href="#"> </button>
                         </li>
-        
+
                         <li class="header-list-accessibility">
                             <button aria-label="Clique neste ícone para alterar a aplicação para o modo ESCURO" type="button" id="contrast-dot-black" href="#"> </button>
                         </li>
-        
+
                         <li class="header-list-accessibility">
-                            <a type="button" id="shortcut-job" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'> 
+                            <a type="button" id="shortcut-job" href="#" class="header-link contrast" data-contrast-dark='{"font": "#fff"}' data-contrast-light='{"font": "white"}'>
                                 [Vagas ALT+J]
                             </a>
                         </li>
@@ -53,12 +53,12 @@
             </ul>
 
             <ul class="navbar-nav">
-                
+
                 <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fa fa-search" aria-hidden="true"></i> Vagas </a> </li>
-                
+
                 @if (!Auth::user())
-                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fa fa-user" aria-hidden="true"></i> Candidato </a> </li>
-                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('vancancy.list') }}"><i class="fas fa-briefcase"></i> Empresa </a> </li>                    
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('candidate.sign_up') }}"><i class="fa fa-user" aria-hidden="true"></i> Candidato </a> </li>
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="{{ route('company.sign_up') }}"><i class="fas fa-briefcase"></i> Empresa </a> </li>
                 @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark contrast-font" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,8 +74,9 @@
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('user.index') }}"><i class="mdi mdi-account"></i> Meu perfil</a></li>
-                                <li><a href=""><i class="mdi mdi-email-outline"></i> Minhas candidaturas</a></li>
+                                <li><a href="{{ route('user.index') }}"><i class="fas fa-tachometer-alt"></i> Dashboard </a></li>
+                                <li><a href="{{ route('user.vacancy') }}"><i class="fas fa-briefcase"></i> Minhas vagas </a></li>
+                                <li><a href="{{ route('user.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a></li>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <li><button type="submit"><i class="mdi mdi-power"></i> Logout</button></li>
@@ -84,7 +85,7 @@
                         </div>
                     </li>
                 @endif
-            
+
             </ul>
         </div>
     </nav>
@@ -104,7 +105,7 @@
                     <h6>- ALT + J : Redireciona para a página de busca de vagas</h6>
                     <h6>- ALT + U : Redireciona para a página de adminitração do perfil (Em desenvolvimento)</h6>
                 </div>
-                        
+
             </div>
             <div class="modal-footer">
                 <button aria-label="Fechar modal" style="color: white; background-color: rgb(42, 42, 42);" type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
@@ -114,10 +115,10 @@
 </div>
 
 @push('scripts')
-    
+
     <script>
         $('#shortcuts-btn').on('click', function(e) {
-            
+
             $('#shortcuts-modal').modal('show');
 
         });

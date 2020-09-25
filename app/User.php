@@ -37,6 +37,8 @@ class User extends Authenticatable
     //     'email_verified_at' => 'datetime',
     // ];
 
+    protected $guarded = ['user_id'];
+
     /**
      * Table name
      *
@@ -55,5 +57,10 @@ class User extends Authenticatable
     public function candidate()
     {
         return $this->hasOne('Model\Candidate\Candidate', 'user_id', 'user_id');
+    }
+
+    public function company()
+    {
+        return $this->hasOne('Model\Company\Company', 'user_id', 'user_id');
     }
 }

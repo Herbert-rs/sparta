@@ -25,13 +25,15 @@ Route::get('/jobs', ['uses' => 'VacancyController@show'])->name('jobs.descriptio
 Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
 Route::post('/candidate/sign_up', ['uses' => 'CandidateController@save']);
 
-Route::get('/company/', ['uses' => 'CompanyController@new'])->name('company.sign_up');
-Route::post('/company/', ['uses' => 'CompanyController@save']);
+Route::get('/company/sign_up', ['uses' => 'CompanyController@new'])->name('company.sign_up');
+Route::post('/company/sign_up', ['uses' => 'CompanyController@save']);
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', ['uses' => 'HomeController@index'])->name('home');
 
-    Route::get('/user', ['uses' => 'UserController@index'])->name('user.index');
+
+    require base_path('routes/sparta/user.php');
+    require base_path('routes/sparta/vacancy.php');
 
 });

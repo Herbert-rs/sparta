@@ -1101,3 +1101,14 @@ if (! function_exists('findMenuParent')) {
         return null;
     }
 }
+
+if (! function_exists('userRoute')) {
+    function userRoute() {
+        
+
+        if( preg_match("#^user(.*)$#i", Route::currentRouteName()) ){
+            return true;
+        }
+        return false;
+    }
+}
