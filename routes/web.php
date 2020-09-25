@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/vacancies', ['uses' => 'VacancyController@list'])->name('vancancy.list');
 
+Route::get('/jobs', ['uses' => 'VacancyController@show'])->name('jobs.description');
 
 //Routes For Sign up
 Route::get('/candidate/sign_up', ['uses' => 'CandidateController@new'])->name('candidate.sign_up');
