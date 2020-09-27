@@ -868,7 +868,7 @@ if (! function_exists('as_check')) {
         if( $check == true ) {
             return '<i style="color: dodgerblue; font-size:16px;text-align:center;" class="fa fa-check"></i>';
         } else {
-            return '<i style="color: lightgrey; font-size:16px;text-align:center;" class="fa fa-minus"></i>';
+            return '<i style="color: red; font-size:16px;text-align:center;" class="fa fa-times"></i>';
         }
     }
 }
