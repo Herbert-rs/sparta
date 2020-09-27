@@ -5,6 +5,7 @@ use Model\Company\Company;
 class CompanyRepository {
 
     protected $model;
+    CONST DEFAULT_AVATAR = '04.jpg';
 
     public function __construct(Company $model)
     {
@@ -19,9 +20,13 @@ class CompanyRepository {
     public function update(array $data)
     {
         $company_data = [
-            'name' => $data['name'],
+            'name'    => $data['name'],
             'manager' => $data['manager'],
-            'tax_id' => $data['tax_id']
+            'tax_id'  => $data['tax_id'],
+            'avatar' => isset($data['avatar']) ? $data['avatar'] : $this::DEFAULT_AVATAR,
+            'description' => $data['description'],
+            'phone' => $data['phone'],
+            'mobile' => $data['mobile'],
         ];
 
         $this->model

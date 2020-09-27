@@ -1,12 +1,11 @@
 <div class="form-group">
     <label for="avatar" class="control-label">Avatar</label>
-    {{-- <input id="email"  class="form-control" value="{{ isset($data) ? $data->email : ''}}" {!! isset($data->email) ? 'readonly style="background-color: black; color: white"' : '' !!} type="email" name="email" placeholder="E-mail" autofocus required autocomplete='off'> --}}
-    <input id="avatar"  class="form-control" type="file" name="email" placeholder="E-mail" autofocus required autocomplete='off'>
+    <input id="avatar"  class="form-control" type="file" name="email" placeholder="E-mail" autofocus  autocomplete='off'>
 </div>
 
 <div class="form-group">
     <label for="description" class="control-label">Descrição do perfil</label>
-    <input id="description" class="form-control" type="text" name="description" placeholder="Digite sua senha..." autofocus autocomplete='off' value="{{ isset($data->description) ? $data->description : '' }}">
+    <input id="description" class="form-control" type="text" name="description" placeholder="Empresa atua no ramo de abc desde 1900..." autofocus autocomplete='off' value="{{ isset($data->description) ? $data->description : '' }}">
 </div> 
 
 <div class="form-group">

@@ -16,7 +16,7 @@
                             <p> Tipo de contratação: {{ $vacancy->hiring_type->description }} </p>
                             <p><small> {{ $vacancy->building->full_address }} </small></p>
                             <a href="javascript:void(0)" class="mt-1 waves-effect waves-dark btn btn-primary btn-md btn-rounded"> <i class="fas fa-pencil-alt"></i> Modificar</a>
-                            <a href="javascript:void(0)" class="mt-1 waves-effect waves-dark btn btn-primary btn-md btn-rounded"> <i class="fas fa-eye"></i> Candidatos</a>
+                            <a href="{{route('user.vacancy.candidates', $vacancy->vacancy_id)}}" class="mt-1 waves-effect waves-dark btn btn-primary btn-md btn-rounded"> <i class="fas fa-eye"></i> Candidatos</a>
                             <div class="row text-center mt-3 justify-content-center">
                                 <div class="col-6 col-md-4 mt-3">
                                     <h3 class="mb-0 font-weight-light">1099</h3><small>Candidaturas</small>

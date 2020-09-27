@@ -25,6 +25,11 @@ class VacancyRepository {
                 ->paginate(6);
     }
 
+    public function getById(int $vacancy_id)
+    {
+        return $this->model->with(['company','hiring_type','profession','building'])->find($vacancy_id);
+    }
+
     public function getByCandidateId(int $candidate_id)
     {
 

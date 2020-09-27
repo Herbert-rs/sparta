@@ -47,6 +47,26 @@ class UserController extends Controller
         return view('user.candidate.vacancy', ['candidatures' => $candidatures]);
     }
 
+    public function vacancyCandidates($vacancy_id)
+    {
+        if( auth()->user()->corporate ){
+
+            $company = $this->companyRepo->getByUserId(auth()->user()->user_id);
+            $vacancy = $this->vacancyRepo->getById($vacancy_id);
+            
+            if($company->company_id != $vacancy->company_id){
+
+                toastr()->warning('Você não possui acesso a essa página');
+                return view('errors.authorization');
+            }
+
+            return view('user.company.vacancy_candidate', ['vacancy' => $vacancy]);
+        }
+
+        toastr()->warning('Você não possui acesso a essa página');
+        return view('errors.authorization');
+    }
+
     public function profile()
     {
         if( auth()->user()->corporate ){
