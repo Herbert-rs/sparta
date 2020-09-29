@@ -1,7 +1,7 @@
 @extends('user.default', ['title' => 'Meu perfil'])
 @section('content-user')
 
-    <form method="post" action="{{ route('user.profile.update') }}">
+    <form method="post" enctype="multipart/form-data" action="{{ route('user.profile.update') }}">
         @csrf
         <div class="row">
             <div class="col-lg-4">

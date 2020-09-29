@@ -86,8 +86,21 @@ class UserController extends Controller
         if( $data['password'] != null){
             $this->userRepo->updatePassword($data['password']);
         }
-
         unset($data['password']);
+
+        if($request->hasFile('avatar')) {
+            $avatarPath = $request->file('avatar');
+            $avatarName = time() . '.' . $avatarPath->getClientOriginalExtension();
+            $path = $request->file('avatar')->storeAs('avatars/'. auth()->user()->user_id, $avatarName, 'public' );
+            $data['avatar'] = $path;
+        }
+
+        if($request->hasFile('curriculum')) {
+            $curriculumPath = $request->file('curriculum');
+            $curriculumName = time() . '.' . $curriculumPath->getClientOriginalExtension();
+            $path = $request->file('curriculum')->storeAs('curriculum/'. auth()->user()->user_id, $curriculumName, 'public' );
+            $data['curriculum'] = $path;
+        }
 
         if( auth()->user()->corporate ){
 

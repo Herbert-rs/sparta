@@ -23,11 +23,14 @@ class CompanyRepository {
             'name'    => $data['name'],
             'manager' => $data['manager'],
             'tax_id'  => $data['tax_id'],
-            'avatar' => isset($data['avatar']) ? $data['avatar'] : $this::DEFAULT_AVATAR,
             'description' => $data['description'],
             'phone' => $data['phone'],
             'mobile' => $data['mobile'],
         ];
+
+        if(isset($data['avatar'])){
+            $company_data['avatar'] = $data['avatar'];
+        }
 
         $this->model
             ->where('user_id',  \Auth::user()->user_id)

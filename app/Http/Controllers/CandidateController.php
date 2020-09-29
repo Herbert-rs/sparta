@@ -14,6 +14,8 @@ class CandidateController extends Controller
      */
     protected $candidateRepo;
 
+    CONST DEFAULT_AVATAR = 'avatars/generic/user-icon';
+
     public  function  __construct(
         CandidateRepository $candidateRepo
     )
@@ -44,6 +46,7 @@ class CandidateController extends Controller
             ]);
     
             $data['user_id'] = $user->user_id;
+            $data['avatar'] = $this::DEFAULT_AVATAR;
             $data['active']  = true;
             unset($data['password']);
 

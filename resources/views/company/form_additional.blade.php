@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="avatar" class="control-label">Avatar</label>
-    <input id="avatar"  class="form-control" type="file" name="email" placeholder="E-mail" autofocus  autocomplete='off'>
+    <input id="avatar"  class="form-control" type="file" name="avatar"  autofocus  autocomplete='off'>
 </div>
 
 <div class="form-group">

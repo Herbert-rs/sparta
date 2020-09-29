@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="avatar" class="control-label">Avatar</label>
-    <input id="avatar"  class="form-control" type="file" name="email" placeholder="E-mail" autofocus  autocomplete='off'>
+    <input id="avatar"  class="form-control" type="file" name="avatar" placeholder="E-mail" autofocus  autocomplete='off'>
 </div>
 
 <div class="form-group">
@@ -9,7 +9,7 @@
 </div> 
 
 <div class="form-group">
-    <label for="curriculum" class="control-label">Curriculum <a href="http://">(Visualizar)</a> </label>
+    <label for="curriculum" class="control-label">Curriculum  {!! isset($data->curriculum) ? "<a href=". Storage::url( $data->curriculum ). ">(Visualizar)</a>" : '' !!} </label>
     <input id="curriculum"  class="form-control" type="file" name="curriculum" placeholder="Anexe seu curriculum" autofocus  autocomplete='off'>
 </div> 
 

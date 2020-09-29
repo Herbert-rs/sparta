@@ -5,7 +5,6 @@ use Model\Candidate\Candidate;
 class CandidateRepository {
 
     protected $model;
-    CONST DEFAULT_AVATAR = '04.jpg';
 
     public function __construct(Candidate $model)
     {
@@ -23,10 +22,13 @@ class CandidateRepository {
             'name' => $data['name'],
             'tax_id' => $data['tax_id'],
             'mobile' => $data['mobile'],
-            'avatar' => isset($data['avatar']) ? $data['avatar'] : $this::DEFAULT_AVATAR,
             'description' => $data['description'],
             'cid' => $data['cid']
         ];
+
+        if(isset($data['avatar'])){
+            $candidate_data['avatar'] = $data['avatar'];
+        }
 
         if(isset($data['curriculum'])){
             $candidate_data['curriculum'] = $data['curriculum'];
