@@ -40,6 +40,6 @@ class CandidatureRepository {
                         ->with(['vacancy','vacancy.company','vacancy.hiring_type','vacancy.profession','vacancy.building'])
                         // ->with(['vacancy.company:company_id,name,avatar'])
                         ->where('candidate_id', $candidate_id)
-                        ->paginate(3);
+                        ->paginate(6);
     }
 }
