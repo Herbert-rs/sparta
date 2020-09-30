@@ -26,4 +26,12 @@ class UserRepository {
         return $user;
     }
 
+    public function updatePassword(string $password)
+    {
+        $this->model
+            ->where('user_id',  \Auth::user()->user_id)
+            ->update([
+                'password' => bcrypt($password)
+            ]);    
+    }
 }

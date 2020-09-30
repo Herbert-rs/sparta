@@ -22,7 +22,12 @@ class VacancyRepository {
                 ->with(['company','hiring_type','profession','building'])
                 ->where('company_id', $company_id)
                 ->where('active', 1)
-                ->paginate(3);
+                ->paginate(6);
+    }
+
+    public function getById(int $vacancy_id)
+    {
+        return $this->model->with(['company','hiring_type','profession','building'])->find($vacancy_id);
     }
 
     public function getByCandidateId(int $candidate_id)

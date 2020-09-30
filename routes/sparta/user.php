@@ -3,7 +3,11 @@
 Route::name('user.')->prefix('user/')->group(function (){
 
     Route::get('/', ['uses' => 'UserController@index'])->name('index');
-    Route::get('/vacancy', ['uses' => 'UserController@vacancy'])->name('vacancy');
-    Route::get('/profile', ['uses' => 'UserController@profile'])->name('profile');
 
+    Route::get('/vacancy', ['uses' => 'UserController@vacancy'])->name('vacancy');
+    Route::get('/vacancy/{vacancy_id}/candidates', ['uses' => 'UserController@vacancyCandidates'])->name('vacancy.candidates');
+
+    Route::get('/profile', ['uses' => 'UserController@profile'])->name('profile');
+    Route::post('/profile/update', ['uses' => 'UserController@profileUpdate'])->name('profile.update');
+    
 });
