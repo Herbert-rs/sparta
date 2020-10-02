@@ -21,7 +21,7 @@
 
                     <div class="form-group btn-container">
                         <center>
-                            <button class="btn btn-primary btn-block" type="submit" style="width: 30rem;"><i class="fa fa-sign-in fa-lg fa-fw"></i>Atualizar perfil</button>
+                            <button {{}} class="btn btn-primary btn-block" type="submit" style="width: 30rem;"><i class="fa fa-sign-in fa-lg fa-fw"></i>Atualizar perfil</button>
                         </center>
                     </div>
                 </div>

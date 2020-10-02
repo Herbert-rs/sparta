@@ -13,7 +13,7 @@ class CompanyController extends Controller
      */
     protected $companyRepo;
 
-    public  function  __construct(
+    public function __construct(
         CompanyRepository $companyRepo
     )
     {
@@ -32,7 +32,7 @@ class CompanyController extends Controller
 
     public function save(Request $request, UserRepository $userRepository)
     {
-        try{
+        try {
 
             $data = $request->except('_token');
             $user = $userRepository->save([
@@ -40,19 +40,31 @@ class CompanyController extends Controller
                 'password' => $data['password'],
                 'corporate' => true
             ]);
-    
+
             $data['user_id'] = $user->user_id;
-            $data['active']  = true;
+            $data['active'] = true;
             unset($data['password']);
 
             $this->companyRepo->save($data);
 
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
 
-        toastr()->success('Seu cadastro foi criado com sucesso','Sucesso!');
+        toastr()->success('Seu cadastro foi criado com sucesso', 'Sucesso!');
         return redirect()->route('company.sign_up');
 
+    }
+
+    function status(Request $request, $id, $type)
+    {
+        $status = 0;
+        if ($type == 'active') {
+            $status = 1;
+        }
+        $this->companyRepo->changeStatus($id, $status);
+
+        toastr()->success('Sua conta foi desativada', 'Sucesso!');
+        return redirect()->route('company.sign_up');
     }
 }

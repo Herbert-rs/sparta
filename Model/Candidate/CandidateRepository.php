@@ -2,7 +2,8 @@
 
 use Model\Candidate\Candidate;
 
-class CandidateRepository {
+class CandidateRepository
+{
 
     protected $model;
 
@@ -26,18 +27,19 @@ class CandidateRepository {
             'cid' => $data['cid']
         ];
 
-        if(isset($data['avatar'])){
+        if (isset($data['avatar'])) {
             $candidate_data['avatar'] = $data['avatar'];
         }
 
-        if(isset($data['curriculum'])){
+        if (isset($data['curriculum'])) {
             $candidate_data['curriculum'] = $data['curriculum'];
         }
 
         $this->model
-            ->where('user_id',  \Auth::user()->user_id)
+            ->where('user_id', \Auth::user()->user_id)
             ->update($candidate_data);
     }
+
     public function save($data)
     {
         $candidate = new Candidate();
@@ -45,6 +47,11 @@ class CandidateRepository {
         $result = $candidate->save();
 
         return $result;
+    }
+
+    public function changeStatus($candidateId, $status)
+    {
+        $this->model->where('candidate_id', $candidateId)->update(['active' => $status]);
     }
 
 }

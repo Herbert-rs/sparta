@@ -2,7 +2,8 @@
 
 use Model\Company\Company;
 
-class CompanyRepository {
+class CompanyRepository
+{
 
     protected $model;
     CONST DEFAULT_AVATAR = '04.jpg';
@@ -20,20 +21,20 @@ class CompanyRepository {
     public function update(array $data)
     {
         $company_data = [
-            'name'    => $data['name'],
+            'name' => $data['name'],
             'manager' => $data['manager'],
-            'tax_id'  => $data['tax_id'],
+            'tax_id' => $data['tax_id'],
             'description' => $data['description'],
             'phone' => $data['phone'],
             'mobile' => $data['mobile'],
         ];
 
-        if(isset($data['avatar'])){
+        if (isset($data['avatar'])) {
             $company_data['avatar'] = $data['avatar'];
         }
 
         $this->model
-            ->where('user_id',  \Auth::user()->user_id)
+            ->where('user_id', \Auth::user()->user_id)
             ->update($company_data);
     }
 
@@ -45,5 +46,11 @@ class CompanyRepository {
 
         return $result;
     }
+
+    public function changeStatus($companyId, $status)
+    {
+        $this->model->where('company_id', $companyId)->update(['active' => $status]);
+    }
+
 
 }

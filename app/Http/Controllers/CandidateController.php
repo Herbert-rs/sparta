@@ -16,7 +16,7 @@ class CandidateController extends Controller
 
     CONST DEFAULT_AVATAR = 'avatars/generic/user-icon';
 
-    public  function  __construct(
+    public function __construct(
         CandidateRepository $candidateRepo
     )
     {
@@ -34,9 +34,10 @@ class CandidateController extends Controller
         return view('candidate.signup');
     }
 
-    public function save(Request $request, UserRepository $userRepository){
+    public function save(Request $request, UserRepository $userRepository)
+    {
 
-        try{
+        try {
 
             $data = $request->except('_token');
             $user = $userRepository->save([
@@ -44,20 +45,32 @@ class CandidateController extends Controller
                 'password' => $data['password'],
                 'corporate' => false
             ]);
-    
+
             $data['user_id'] = $user->user_id;
             $data['avatar'] = $this::DEFAULT_AVATAR;
-            $data['active']  = true;
+            $data['active'] = true;
             unset($data['password']);
 
             $this->candidateRepo->save($data);
 
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
 
-        toastr()->success('Seu cadastro foi criado com sucesso','Sucesso!');
+        toastr()->success('Seu cadastro foi criado com sucesso', 'Sucesso!');
         return redirect()->route('candidate.sign_up');
 
+    }
+
+    function status(Request $request, $id, $type)
+    {
+        $status = 0;
+        if ($type == 'active') {
+            $status = 1;
+        }
+        $this->candidateRepo->changeStatus($id, $status);
+
+        toastr()->success('Sua conta foi desativada', 'Sucesso!');
+        return redirect()->route('candidate.sign_up');
     }
 }
