@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Model\Candidature\CandidatureRepository;
 use Model\Vacancy\VacancyRepository;
 use Auth;
+use Illuminate\Http\Request;
+use Model\Vacancy\Vacancy;
 
 class VacancyController extends Controller
 {
-    
+
     protected $vacancyRepository;
     protected $candidatureRepository;
 
@@ -45,7 +47,7 @@ class VacancyController extends Controller
             }
 
             $this->candidatureRepository->save($vacancy_id, Auth::user()->candidate->candidate_id);
-    
+
             return json_encode([
                 'status' => 200,
                 'message' => 'Sucesso ao enviar candidatura'
